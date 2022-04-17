@@ -29,7 +29,7 @@ async def start(event):
                               [Button.inline("Yordam🤔", data="help"),
                               Button.url("AziK ProJecTs🦾", url="https://t.me/azik_projects") ]])
     tag = f'[{event.sender.first_name}](tg://user?id={event.sender_id})'
-    await Drone.send_message(int(ACCESS_CHANNEL), f'{tag} Botni ishga tushurdi. #NEWUSER')
+    await Drone.send_message(int(ACCESS_CHANNEL), f'{tag} Botni ishga tushurdi. #AZIKVCOMP1')
     
 @Drone.on(events.callbackquery.CallbackQuery(data="menu"))
 async def menu(event):
