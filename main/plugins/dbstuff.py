@@ -21,7 +21,7 @@ from main.Database.database import Database
 
 #Database command handling--------------------------------------------------------------------------
 
-db = Database(MONGODB_URI, 'videoconvertor')
+db = Database(MONGODB_URI, 'azikvcomp1')
 
 @Drone.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
 async def incomming(event):
@@ -30,19 +30,19 @@ async def incomming(event):
 
 @Drone.on(events.NewMessage(incoming=True, from_users=AUTH_USERS , pattern="/users"))
 async def listusers(event):
-    xx = await event.reply("Counting total users in Database.")
+    xx = await event.reply("Ma'lumotlar bazasidagi foydalanuvchiar hisoblanmoqda")
     x = await db.total_users_count()
-    await xx.edit(f"Total user(s) {int(x)}")
+    await xx.edit(f"Umumiy foydalanuvchilar {int(x)}ta")
 
-@Drone.on(events.NewMessage(incoming=True, from_users=AUTH_USERS , pattern="/bcast"))
+@Drone.on(events.NewMessage(incoming=True, from_users=AUTH_USERS , pattern="/broadcast"))
 async def bcast(event):
     ids = []
     msg = await event.get_reply_message()
     if not msg:
-        await event.reply("reply to a mesage to broadcast!")
-    xx = await event.reply("Counting total users in Database.")
+        await event.reply("Hammaga jo'natish uchun kerakli xabarga javob bering!")
+    xx = await event.reply("Ma'lumotlar bazasida jami foydalanuvchilarni hisoblanmoqda.")
     x = await db.total_users_count()
-    await xx.edit(f"Total user(s) {int(x)}")
+    await xx.edit(f"Umumiy foydalanuvchilar {int(x)}ta")
     all_users = await db.get_users()
     sent = []
     failed = []
@@ -54,33 +54,33 @@ async def bcast(event):
             try:
                 await event.client.send_message(int(id), msg)
                 sent.append(id)
-                await xx.edit(f"Total users : {x}", 
+                await xx.edit(f"Umumiy foydalanuvchilar: {x}ta", 
                              buttons=[
-                                 [Button.inline(f"SENT: {len(sent)}", data="none")],
-                                 [Button.inline(f"FAILED: {len(failed)}", data="none")]])
+                                 [Button.inline(f"Jo'natildi: {len(sent)}ta", data="none")],
+                                 [Button.inline(f"Xatoolik bo'ldi: {len(failed)}ta", data="none")]])
                 await asyncio.sleep(1)
             except FloodWaitError as fw:
                 await asyncio.sleep(fw.seconds + 10)
                 await event.client.send_message(int(id), msg)
                 sent.append(id)
-                await xx.edit(f"Total users : {x}", 
+                await xx.edit(f"Umumiy foydalanuvchilar: {x}ta", 
                              buttons=[
-                                [Button.inline(f"SENT: {len(sent)}", data="none")],
-                                [Button.inline(f"FAILED: {len(failed)}", data="none")]])
+                                [Button.inline(f"Jo'natildi: {len(sent)}ta", data="none")],
+                                [Button.inline(f"Xatolik bo'ldi: {len(failed)}ta", data="none")]])
                 await asyncio.sleep(1)
         except Exception:
             failed.append(id)
             await xx.edit(f"Total users : {x}", 
                              buttons=[
-                                 [Button.inline(f"SENT: {len(sent)}", data="none")],
-                                 [Button.inline(f"FAILED: {len(failed)}", data="none")]])
-    await xx.edit(f"Broadcast complete.\n\nTotal users in database: {x}", 
+                                 [Button.inline(f"Jo'natildi: {len(sent)}", data="none")],
+                                 [Button.inline(f"Xatolik bo'ldi: {len(failed)}", data="none")]])
+    await xx.edit(f"Hammaga jo'natish tugallandi.\n\nMa'lumotlar bazasida jami foydalanuvchilar: {x}ta", 
                  buttons=[
-                     [Button.inline(f"SENT: {len(sent)}", data="none")],
-                     [Button.inline(f"FAILED: {len(failed)}", data="none")]])
+                     [Button.inline(f"Jo'natildi: {len(sent)}", data="none")],
+                     [Button.inline(f"Xatolik bo'ldi: {len(failed)}", data="none")]])
     
     
-@Drone.on(events.NewMessage(incoming=True, from_users=AUTH_USERS , pattern="^/disallow (.*)" ))
+@Drone.on(events.NewMessage(incoming=True, from_users=AUTH_USERS , pattern="/ban_user" ))
 async def bban(event):
     c = event.pattern_match.group(1)
     if not c:
@@ -98,7 +98,7 @@ async def bban(event):
         await event.reply(f"{c} is now disallowed.")
     admins.remove(f'{int(AUTH)}')
     
-@Drone.on(events.NewMessage(incoming=True, from_users=AUTH_USERS , pattern="^/allow (.*)" ))
+@Drone.on(events.NewMessage(incoming=True, from_users=AUTH_USERS , pattern="/unban_user" ))
 async def unbban(event):
     xx = event.pattern_match.group(1)
     if not xx:
