@@ -36,7 +36,7 @@ forcesubtext = f"Salom🖐!\nUshbu bot bilan video hajmini sifatini yo'qotmasdan
 
 @Drone.on(events.NewMessage(incoming=True,func=lambda e: e.is_private))
 async def compin(event):
-    db = Database(MONGODB_URI, 'videoconvertor')
+    db = Database(MONGODB_URI, 'azikvcomp1')
     if event.is_private:
         media = event.media
         if media:
