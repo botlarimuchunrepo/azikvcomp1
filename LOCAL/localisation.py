@@ -20,6 +20,8 @@ SUPPORT_LINK = "https://t.me/azik_projects_support"
 
 BOT_LINK = "https://t.me/azik_compressbot"
 
+ADMIN_LINK = "https://t.me/azik_developer"
+
 info_text = "Bu bot @azik_developer tomonidan ishlab chiqilgan\n\nProyektlarimiz kanali: @azik_projects\nQo'llab Quvvatlash Guruhi : @azik_projects_support\n\n@azik_projects - 𝚃𝚘 𝚝𝚑𝚎 𝚏𝚞𝚝𝚞𝚛𝚎 𝚠𝚒𝚝𝚑 𝚞𝚜🦾"   
 
 aboutDev_text = """@azik_developer tomonidan yaratilgan
