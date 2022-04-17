@@ -7,7 +7,7 @@ Video hajmini siqishingiz mumkin🗜✅
 
 Boshqa jarayon davom etayotgan bo'lsa boshqa botlarimizda sinab ko'ring👇
 
-👉 @azik_compressbot @azik_compress2bot 👈
+👉 @azik_compress2bot @azik_compress3bot 👈
 
 Video yuboring!!
 @azik_projects - 𝚃𝚘 𝚝𝚑𝚎 𝚏𝚞𝚝𝚞𝚛𝚎 𝚠𝚒𝚝𝚑 𝚞𝚜🦾"""
@@ -18,7 +18,7 @@ CHANNEL_LINK = "https://t.me/azik_projects"
 
 SUPPORT_LINK = "https://t.me/azik_projects_support"
 
-BOT_LINK = "https://t.me/azik_compress3bot"
+BOT_LINK = "https://t.me/azik_compressbot"
 
 info_text = "Bu bot @azik_developer tomonidan ishlab chiqilgan\n\nProyektlarimiz kanali: @azik_projects\nQo'llab Quvvatlash Guruhi : @azik_projects_support\n\n@azik_projects - 𝚃𝚘 𝚝𝚑𝚎 𝚏𝚞𝚝𝚞𝚛𝚎 𝚠𝚒𝚝𝚑 𝚞𝚜🦾"   
 
