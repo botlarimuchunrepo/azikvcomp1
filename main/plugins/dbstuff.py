@@ -80,7 +80,7 @@ async def bcast(event):
                      [Button.inline(f"Xatolik bo'ldi: {len(failed)}ta", data="none")]])
     
     
-@Drone.on(events.NewMessage(incoming=True, from_users=AUTH_USERS , pattern="/ban_user" ))
+@Drone.on(events.NewMessage(incoming=True, from_users=AUTH_USERS , pattern="^/disallow (.*)" ))
 async def bban(event):
     c = event.pattern_match.group(1)
     if not c:
@@ -98,7 +98,7 @@ async def bban(event):
         await event.reply(f"{c} is now disallowed.")
     admins.remove(f'{int(AUTH)}')
     
-@Drone.on(events.NewMessage(incoming=True, from_users=AUTH_USERS , pattern="/unban_user" ))
+@Drone.on(events.NewMessage(incoming=True, from_users=AUTH_USERS , pattern="^/allow (.*)" ))
 async def unbban(event):
     xx = event.pattern_match.group(1)
     if not xx:
