@@ -48,7 +48,7 @@ async def force_sub(id):
 #Thumbnail--------------------------------------------------------------------------------------------------------------
 
 async def set_thumbnail(event, img):
-    db = Database(MONGODB_URI, 'videoconvertor')
+    db = Database(MONGODB_URI, 'azikvcomp1')
     edit = await event.client.send_message(event.chat_id, 'Qayta ishlanmoqda.')
     try:
         path = await event.client.download_media(img)
