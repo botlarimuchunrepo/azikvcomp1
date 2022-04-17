@@ -77,7 +77,7 @@ async def bcast(event):
     await xx.edit(f"Hammaga jo'natish tugallandi.\n\nMa'lumotlar bazasida jami foydalanuvchilar: {x}ta", 
                  buttons=[
                      [Button.inline(f"Jo'natildi: {len(sent)}ta", data="none")],
-                     [Button.inline(f"Xatolik bo'ldi: {len(failed)}ta", data="none")]])
+                     ])
     
     
 @Drone.on(events.NewMessage(incoming=True, from_users=AUTH_USERS , pattern="^/disallow (.*)" ))
