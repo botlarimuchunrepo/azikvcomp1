@@ -107,7 +107,7 @@ async def LOG_END(event, ps_name):
         chat = int("-100" + str(LOG_ID))
     await event.client.send_message(int(chat), f'{ps_name}', link_preview=False)
 
-@Drone.on(events.NewMessage(incoming=True, from_users=AUTH_USERS, pattern="/broadcast"))
+@Drone.on(events.NewMessage(incoming=True, from_users=AUTH_USERS, pattern="^/msg"))
 async def msg(event):
     ok = await event.get_reply_message()
     if not ok:
