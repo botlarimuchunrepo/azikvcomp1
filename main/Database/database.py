@@ -16,7 +16,7 @@ import datetime
 import motor.motor_asyncio
 from .. import MONGODB_URI
 
-SESSION_NAME = 'azikvcomp1'
+SESSION_NAME = 'videoconvertor'
 
 class Database:
   
