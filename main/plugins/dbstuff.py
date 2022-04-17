@@ -70,14 +70,14 @@ async def bcast(event):
                 await asyncio.sleep(1)
         except Exception:
             failed.append(id)
-            await xx.edit(f"Total users : {x}", 
+            await xx.edit(f"Umumiy foydalanuvchilar: {x}ta", 
                              buttons=[
-                                 [Button.inline(f"Jo'natildi: {len(sent)}", data="none")],
-                                 [Button.inline(f"Xatolik bo'ldi: {len(failed)}", data="none")]])
+                                 [Button.inline(f"Jo'natildi: {len(sent)}ta", data="none")],
+                                 [Button.inline(f"Xatolik bo'ldi: {len(failed)}ta", data="none")]])
     await xx.edit(f"Hammaga jo'natish tugallandi.\n\nMa'lumotlar bazasida jami foydalanuvchilar: {x}ta", 
                  buttons=[
-                     [Button.inline(f"Jo'natildi: {len(sent)}", data="none")],
-                     [Button.inline(f"Xatolik bo'ldi: {len(failed)}", data="none")]])
+                     [Button.inline(f"Jo'natildi: {len(sent)}ta", data="none")],
+                     [Button.inline(f"Xatolik bo'ldi: {len(failed)}ta", data="none")]])
     
     
 @Drone.on(events.NewMessage(incoming=True, from_users=AUTH_USERS , pattern="/ban_user" ))
