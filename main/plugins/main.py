@@ -29,7 +29,7 @@ from main.Database.database import Database
 from main.plugins.actions import force_sub
 from main.plugins.encoder import encode
 from main.plugins.ssgen import screenshot
-from LOCAL.localisation import source_text, SUPPORT_LINK
+from LOCAL.localisation import source_text, SUPPORT_LINK, ADMIN_LINK
 
 #Don't be a MF by stealing someone's hardwork.
 forcesubtext = f"Salom🖐!\nUshbu bot bilan video hajmini sifatini yo'qotmasdan siqish va video ustiga pechat qo'yishingiz mumkin.\n\nBotdan foydalanish uchun ushbu\n@{FORCESUB_UN} @{FORCESUB_UN} @{FORCESUB_UN} kanaliga a'zo bo'ling va qayta /start buyrug'ini bering!.\n\n@azik_projects - 𝚃𝚘 𝚝𝚑𝚎 𝚏𝚞𝚝𝚞𝚛𝚎 𝚠𝚒𝚝𝚑 𝚞𝚜🦾"
@@ -119,7 +119,7 @@ async def set_timer(event, list1, list2):
     now = time.time()
     list2.append(f'{now}')
     list1.append(f'{event.sender_id}')
-    await event.client.send_message(event.chat_id, 'Siz keyingi jarayonni 3 daqiqadan keyin boshlashingiz mumkin!!!')
+    await event.client.send_message(event.chat_id, "Siz keyingi jarayonni 3 daqiqadan keyin boshlashingiz mumkin!!!\n\nPremium foydalanuvchi bo'lmoqchi bo'lsangiz administrator bilan bog'laning!💵💵💵[Administrator]({ADMIN_LINK})")
     await asyncio.sleep(180)
     list2.pop(int(timer.index(f'{now}')))
     list1.pop(int(process1.index(f'{event.sender_id}')))
@@ -130,7 +130,7 @@ async def check_timer(event, list1, list2):
         index = list1.index(f'{event.sender_id}')
         last = list2[int(index)]
         present = time.time()
-        return False, f"Siz keyingi jarayonni {180-round(present-float(last))} sekunddan keyin boshlashingiz mumkin!"
+        return False, f"Siz keyingi jarayonni {180-round(present-float(last))} sekunddan keyin boshlashingiz mumkin!\n\nPremium foydalanuvchi bo'lmoqchi bo'lsangiz administrator bilan bog'laning!💵💵💵"
     else:
         return True, None
     
