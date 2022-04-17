@@ -29,7 +29,7 @@ from LOCAL.localisation import SUPPORT_LINK
 
 async def media_rename(event, msg, new_name):
     edit = await event.client.send_message(event.chat_id, 'Qayta ishlanmoqda', reply_to=msg.id)
-    db = Database(MONGODB_URI, 'videoconvertor')
+    db = Database(MONGODB_URI, 'azikvcomp1')
     T = await db.get_thumb(event.sender_id)
     if T is not None:
         ext = T.split("/")[4]
