@@ -147,7 +147,7 @@ async def vtmp3(event):
         await mp3(event, msg)
         os.rmdir("audioconvert")
     else:
-        await event.edit("Yana bir jarayon davom etmoqda! ⏳Iltimos kutib turing\n\nYoki boshqa botlarimizdan foydanalaning.\n@azik_compressbot @azik_compress2bot")
+        await event.edit("Yana bir jarayon davom etmoqda! ⏳Iltimos kutib turing\n\nYoki boshqa botlarimizdan foydanalaning.\n@azik_compress2bot @azik_compress3bot")
         
 @Drone.on(events.callbackquery.CallbackQuery(data="flac"))
 async def vtflac(event):
@@ -162,7 +162,7 @@ async def vtflac(event):
         await flac(event, msg)
         os.rmdir("audioconvert")
     else:
-        await event.edit("Yana bir jarayon davom etmoqda! ⏳Iltimos kutib turing\n\nYoki boshqa botlarimizdan foydanalaning.\n@azik_compressbot @azik_compress2bot")
+        await event.edit("Yana bir jarayon davom etmoqda! ⏳Iltimos kutib turing\n\nYoki boshqa botlarimizdan foydanalaning.\n@azik_compress2bot @azik_compress3bot")
         
 @Drone.on(events.callbackquery.CallbackQuery(data="wav"))
 async def vtwav(event):
@@ -177,7 +177,7 @@ async def vtwav(event):
         await wav(event, msg)
         os.rmdir("audioconvert")
     else:
-        await event.edit("Yana bir jarayon davom etmoqda! ⏳Iltimos kutib turing\n\nYoki boshqa botlarimizdan foydanalaning.\n@azik_compressbot @azik_compress2bot")
+        await event.edit("Yana bir jarayon davom etmoqda! ⏳Iltimos kutib turing\n\nYoki boshqa botlarimizdan foydanalaning.\n@azik_compress2bot @azik_compress3bot")
         
 @Drone.on(events.callbackquery.CallbackQuery(data="mp4"))
 async def vtmp4(event):
