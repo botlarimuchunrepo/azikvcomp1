@@ -83,7 +83,7 @@ async def help(event):
                      
                          [Button.url("Qo'llab quvvatlash guruhi", url=f"{SUPPORT_LINK}")],
                          [
-                         Button.inline("Orqaga", data="help")]])
+                         Button.inline("Orqaga", data="boshsahifa")]])
     
 @Drone.on(events.callbackquery.CallbackQuery(data="plugins"))
 async def plugins(event):
