@@ -66,7 +66,7 @@ async def help(event):
 Video hajmini siqishingiz mumkin🗜✅
 
 Boshqa jarayon davom etayotgan bo'lsa boshqa botlarimizda sinab ko'ring👇
-👉 @azik_compressbot @azik_compress2bot 👈
+👉 @azik_compress2bot @azik_compress3bot 👈
 
 Video yuboring!!
 @azik_projects - 𝚃𝚘 𝚝𝚑𝚎 𝚏𝚞𝚝𝚞𝚛𝚎 𝚠𝚒𝚝𝚑 𝚞𝚜🦾""",
@@ -125,4 +125,4 @@ async def res(event):
     elif result is False:
         await event.edit("An error occured!")
     elif result is True:
-        await event.edit("Bot 1daqiqada qayta yuklanadi.")
+        await event.edit("Bot 1 daqiqada qayta yuklanadi.")
