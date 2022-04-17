@@ -114,7 +114,7 @@ async def msg(event):
         await event.reply("Yubormoqchi bo'lgan xabaringizga javob bering!")
     user = event.pattern_match.group(1)
     if not user:
-        await event.reply("Xabar yuborishimni xohlagan foydalanuvchi identifikatorini bering.\n\n AZIK COMPRESS LOGS #NEWUSER")
+        await event.reply("Xabar yuborishimni xohlagan foydalanuvchi identifikatorini bering.\n\n AZIK COMPRESS LOGS #AZIKVCOMP1")
     await Drone.send_message(int(user) , ok )
     await event.reply("Xabar yuborildi.")
     
