@@ -15,7 +15,7 @@ from main.plugins.actions import LOG_START, LOG_END
 
 async def compress(event, msg, ffmpeg_cmd=0, ps_name=None):
     if ps_name is None:
-        ps_name = '**Siqilmoqda🗜...**'
+        ps_name = "Siqilmoqda🗜... @azik_compressbot yordamida."
     Drone = event.client
     edit = await Drone.send_message(event.chat_id, "Qayta ishlanmoqda...", reply_to=msg.id)
     new_name = "out_" + dt.now().isoformat("_", "seconds")
@@ -42,7 +42,7 @@ async def compress(event, msg, ffmpeg_cmd=0, ps_name=None):
         out = new_name + ext
     DT = time.time()
     _ps = "Siqish"
-    if ps_name != "**Siqilmoqda🗜...**":
+    if ps_name != "Siqilmoqda🗜... @azik_compressbot yordamida.":
         _ps = "Qayta kodlash"
     log = await LOG_START(event, f"**{str(_ps)} Jarayon boshlandi**\n\n[@{BOT_UN} hozir band.]({BOT_LINK})")
     log_end_text = f"**{_ps} Jarayon tugadi**\n\n[@{BOT_UN} hozir bo'sh.]]({BOT_LINK})"
