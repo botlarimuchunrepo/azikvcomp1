@@ -25,11 +25,11 @@ def time_formatter(milliseconds: int) -> str:
     days, hours = divmod(hours, 24)
     weeks, days = divmod(days, 7)
     tmp = (
-        ((str(weeks) + "w:") if weeks else "")
-        + ((str(days) + "d:") if days else "")
-        + ((str(hours) + "h:") if hours else "")
-        + ((str(minutes) + "m:") if minutes else "")
-        + ((str(seconds) + "s:") if seconds else "")
+        ((str(weeks) + " hafta:") if weeks else "")
+        + ((str(days) + " kun:") if days else "")
+        + ((str(hours) + " soat:") if hours else "")
+        + ((str(minutes) + " minut:") if minutes else "")
+        + ((str(seconds) + " sekund:") if seconds else "")
     )
     if tmp.endswith(":"):
         return tmp[:-1]
@@ -75,4 +75,4 @@ async def ffmpeg_progress(cmd, file, progress, now, event, ps_name, log=None):
                 eta = time_formatter(some_eta)
                 await event.edit(f'{ps_name}\n\n{progress_str}' + f'Hajmi tamomlandi: {e_size}\n\nQolgan vaqt ⏳ {eta}')
                 if log != None:
-                    await log.edit(f'{ps_name}\n\n{progress_str}' + f'Hajmi tamomlandi2: {e_size}\n\nQolgan vaqt2 ⏳ {eta}')
+                    await log.edit(f'{ps_name}\n\n{progress_str}' + f'Hajmi tamomlandi: {e_size}\n\nQolgan vaqt ⏳ {eta}')
