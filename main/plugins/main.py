@@ -50,8 +50,7 @@ async def compin(event):
             if 'video' in video:
                 await event.reply("📽Ushbu video bilan nima qilmoqchisiz?",
                             buttons=[
-                                [Button.inline("Siqish🗜", data="compress"),
-                                 Button.inline("Qayta nomlash✍️", data="rename")]
+                                [Button.inline("Siqish🗜", data="compress")]
                             ])
             elif 'png' in video:
                 return
@@ -105,8 +104,7 @@ async def convert(event):
 async def back(event):
     await event.edit("📽Ushbu video bilan nima qilmoqchisiz?", 
                      buttons=[
-                                [Button.inline("Siqish🗜", data="compress"),
-                                 Button.inline("Qayta nomlash✍️", data="rename")]
+                                [Button.inline("Siqish🗜", data="compress")]
                             ])
     
 #-----------------------------------------------------------------------------------------
